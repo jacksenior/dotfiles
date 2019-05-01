@@ -1,0 +1,6 @@
+#!/bin/bash
+
+ln -s .vimrc ~/.vimrc;
+ls -s .tmux.conf ~/.tmux.conf;
+ls -s .zshrc ~/.zshrc;
+

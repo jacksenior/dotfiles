@@ -1,0 +1,7 @@
+bind status a !?git commit --amend
+
+## modify color config to work with one dark iterm colors
+color title-focus white black 
+color cursor black white 
+color title-blur black blue
+
