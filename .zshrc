@@ -129,3 +129,8 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# use wizard theme for vtop
+alias vtop="vtop --theme wizard"
+
+[ -f ./secrets ] && source ./secrets
