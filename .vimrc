@@ -40,7 +40,6 @@ Plug 'tpope/vim-fugitive',
 Plug 'editorconfig/editorconfig-vim',
 Plug 'edkolev/tmuxline.vim',
 Plug 'jiangmiao/auto-pairs',
-Plug 'zhaocai/GoldenView.Vim',
 Plug 'sheerun/vim-polyglot',
 Plug 'moll/vim-bbye',
 Plug '/usr/local/opt/fzf'
@@ -184,11 +183,7 @@ if executable('ag')
   " ag is fast enough that CtrlP doesn't need to cache
   let g:ctrlp_use_caching = 0
 endif
-let g:goldenview__enable_default_mapping = 0
 ca Ag Ag!
-
-nmap <silent> <C-F8>  <Plug>GoldenViewNext
-nmap <silent> <C-F9>  <Plug>GoldenViewPrevious
 
 
 " hi its hybrid line numbers https://jeffkreeftmeijer.com/vim-number/
