@@ -47,6 +47,9 @@ Plug 'takac/vim-hardtime'
 Plug 'easymotion/vim-easymotion'
 Plug 'rking/ag.vim'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'Quramy/tsuquyomi'
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
 
 "coment comands 
 Plug 'tpope/vim-commentary'
@@ -99,7 +102,7 @@ autocmd BufEnter *.jss :setlocal filetype=javascript
 autocmd BufEnter *.theme :setlocal filetype=javascript
 
 " disable polyglot for javascript pangloss/vim-javascript is much better.
-let g:polyglot_disabled = ['javascript', 'jsx', 'javascript.jsx']
+let g:polyglot_disabled = ['javascript', 'jsx', 'typescript.jsx', 'javascript.jsx']
 
 " diables basic mouse behavior such as resizing buffers.
 set mouse-=a
@@ -121,11 +124,13 @@ noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
 noremap <leader>l :Align
 noremap <leader>p :Prettier<CR>
-nnoremap <leader>a :Ag<space>
 nnoremap <leader>b :CtrlPBuffer<CR>
 nnoremap <leader>t :CtrlP<CR>
 nnoremap <leader>T :CtrlPClearCache<CR>:CtrlP<CR>
 nnoremap <leader>] :TagbarToggle<CR>
+noremap <leader>a :ALEGoToDefinition<CR>
+noremap <leader>s :ALEGoToDefinitionInSplit<CR>
+noremap <leader>d :ALEGoToDefinitionInVSplit<CR>
 nnoremap <leader><space> :call whitespace#strip_trailing()<CR>
 nnoremap <leader>g :GitGutterToggle<CR>
 noremap <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
@@ -166,8 +171,11 @@ endif
 " Don't copy the contents of an overwritten selection.
 vnoremap p "_dP
 
-let g:ale_linters = {'javascript': ['eslint'],}
+let g:ale_linters = {'javascript': ['eslint']}
 let g:jsx_ext_required = 0
+let g:ale_sign_error = '✖'
+let g:ale_sign_warning = '⚠'
+let g:ale_completion_enabled = 1
 
 set nobackup         " Don't keep a backup before overwriting a file
 set nowb             " Don't backup file before overwriting
@@ -266,6 +274,8 @@ nnoremap <f9> :tabnext<CR>
 :command! Vs vs
 :command! SP sp
 :command! Sp sp
+:command! QA qa
+:command! Qa qa
 
 " Stop opening that stupid window, you never use it anyway!
 map q: :q
@@ -293,9 +303,9 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " to move blocks up and down
 "
-" Normal mode
-nnoremap <C-j> :m .+1<CR>==
-nnoremap <C-k> :m .-2<CR>==
+" " Normal mode
+" nnoremap <C-j> :m .+1<CR>==
+" nnoremap <C-k> :m .-2<CR>==
 
 " Insert mode
 inoremap <C-j> <ESC>:m .+1<CR>==gi
