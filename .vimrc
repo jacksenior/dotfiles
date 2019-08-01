@@ -19,7 +19,6 @@ endif
 call plug#begin('~/.vim/plugged')
 
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'morhetz/gruvbox'
 Plug 'joshdick/onedark.vim'
 Plug 'w0rp/ale'
 Plug 'prettier/vim-prettier', {
@@ -67,6 +66,9 @@ Plug 'honza/vim-snippets',
 
 call plug#end()
 
+" only check ts errors on save
+let g:nvim_typescript#diagnostics_enable = 0
+autocmd BufWrite *.ts,*.tsx TSGetDiagnostics
 
 " vim hard timke config
 let g:hardtime_maxcount = 2
@@ -259,9 +261,6 @@ let g:ctrlp_show_hidden = 1
 
 "allow mouse to work all teh way to the right past column 220
 set ttymouse=sgr
-
-"let g:gruvbox_contrast_dark = "soft"
-
 
 "custom tab movemoent bindings"
 nnoremap <f8> :tabprevious<CR>
