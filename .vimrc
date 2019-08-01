@@ -27,13 +27,10 @@ Plug 'prettier/vim-prettier', {
 Plug 'vim-airline/vim-airline',
 Plug 'pangloss/vim-javascript',
 Plug 'mxw/vim-jsx',
-Plug 'ternjs/tern_for_vim', { 'do': 'npm install' },
 Plug 'tpope/vim-vinegar',
 "restore vim session
 Plug 'tpope/vim-obsession',
 Plug 'airblade/vim-gitgutter',
-Plug 'mustache/vim-mustache-handlebars',
-Plug 'mileszs/ack.vim',
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive',
 Plug 'editorconfig/editorconfig-vim',
@@ -143,7 +140,6 @@ cnoremap w!! %!sudo tee > /dev/null %
 
 " plugin settings
 let g:ctrlp_match_window = 'order:ttb,max:20'
-let g:NERDSpaceDelims=1
 let g:gitgutter_enabled = 1
 
 
