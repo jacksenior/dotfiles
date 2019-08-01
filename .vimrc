@@ -50,6 +50,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'Quramy/tsuquyomi'
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 
 "coment comands 
 Plug 'tpope/vim-commentary'
