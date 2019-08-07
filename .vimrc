@@ -63,10 +63,6 @@ Plug 'honza/vim-snippets',
 
 call plug#end()
 
-" only check ts errors on save
-let g:nvim_typescript#diagnostics_enable = 0
-autocmd BufWrite *.ts,*.tsx TSGetDiagnostics
-
 " vim hard timke config
 let g:hardtime_maxcount = 2
 
