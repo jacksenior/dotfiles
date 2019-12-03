@@ -28,38 +28,30 @@ Plug 'vim-airline/vim-airline',
 Plug 'pangloss/vim-javascript',
 Plug 'mxw/vim-jsx',
 Plug 'tpope/vim-vinegar',
-"restore vim session
-Plug 'tpope/vim-obsession',
 Plug 'airblade/vim-gitgutter',
-Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive',
 Plug 'editorconfig/editorconfig-vim',
 Plug 'edkolev/tmuxline.vim',
 Plug 'jiangmiao/auto-pairs',
 Plug 'sheerun/vim-polyglot',
 Plug 'moll/vim-bbye',
-Plug '/usr/local/opt/fzf'
-Plug 'takac/vim-hardtime'
+" Plug '/usr/local/opt/fzf'
 Plug 'easymotion/vim-easymotion'
 Plug 'rking/ag.vim'
-Plug 'christoomey/vim-tmux-navigator'
+"Plug 'christoomey/vim-tmux-navigator'
 Plug 'Quramy/tsuquyomi'
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 
 "coment comands 
-Plug 'tpope/vim-commentary'
+ Plug 'tpope/vim-commentary'
 
-"notes 
-Plug 'xolox/vim-notes'
-Plug 'xolox/vim-misc'
-
-"smipets
-" Track the engine.
-Plug 'SirVer/ultisnips',
-" Snippets are separated from the engine. Add this if you want them:
-Plug 'honza/vim-snippets',
+""smipets
+"" Track the engine.
+"Plug 'SirVer/ultisnips',
+"" Snippets are separated from the engine. Add this if you want them:
+"Plug 'honza/vim-snippets',
 
 call plug#end()
 
