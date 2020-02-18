@@ -19,30 +19,26 @@ endif
 call plug#begin('~/.vim/plugged')
 
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'joshdick/onedark.vim'
-Plug 'w0rp/ale'
+Plug 'morhetz/gruvbox'
+Plug 'dense-analysis/ale'
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql'] },
 Plug 'vim-airline/vim-airline',
-Plug 'pangloss/vim-javascript',
-Plug 'mxw/vim-jsx',
 Plug 'tpope/vim-vinegar',
 Plug 'airblade/vim-gitgutter',
 Plug 'tpope/vim-fugitive',
 Plug 'editorconfig/editorconfig-vim',
 Plug 'edkolev/tmuxline.vim',
 Plug 'jiangmiao/auto-pairs',
-Plug 'sheerun/vim-polyglot',
 Plug 'moll/vim-bbye',
-" Plug '/usr/local/opt/fzf'
 Plug 'easymotion/vim-easymotion'
 Plug 'rking/ag.vim'
-"Plug 'christoomey/vim-tmux-navigator'
 Plug 'Quramy/tsuquyomi'
-Plug 'leafgarland/typescript-vim'
-Plug 'peitalin/vim-jsx-typescript'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+
+" A collection of language packs for Vim.
+Plug 'sheerun/vim-polyglot',
 
 "coment comands 
  Plug 'tpope/vim-commentary'
@@ -89,8 +85,8 @@ set wildmode=longest,list,full
 autocmd BufEnter *.jss :setlocal filetype=javascript
 autocmd BufEnter *.theme :setlocal filetype=javascript
 
-" disable polyglot for javascript pangloss/vim-javascript is much better.
-let g:polyglot_disabled = ['javascript', 'jsx', 'typescript.jsx', 'javascript.jsx']
+"disable polyglot for javascript pangloss/vim-javascript is much better.
+" let g:polyglot_disabled = ['javascript', 'jsx', 'typescript.jsx', 'typescript.tsx', 'javascript.jsx']
 
 " diables basic mouse behavior such as resizing buffers.
 set mouse-=a
@@ -158,11 +154,16 @@ endif
 " Don't copy the contents of an overwritten selection.
 vnoremap p "_dP
 
+" ale linter config
 let g:ale_linters = {'javascript': ['eslint']}
-let g:jsx_ext_required = 0
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_insert_leave = 0
+let g:ale_lint_on_enter = 0
 let g:ale_sign_error = '✖'
 let g:ale_sign_warning = '⚠'
 let g:ale_completion_enabled = 1
+
+let g:jsx_ext_required = 0
 
 set nobackup         " Don't keep a backup before overwriting a file
 set nowb             " Don't backup file before overwriting
@@ -212,10 +213,9 @@ if exists('+termguicolors')
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
   set termguicolors
 endif
-let g:onedark_terminal_italics = 1
-
+let g:gruvbox_italic=1
 syntax on
-colorscheme onedark 
+colorscheme gruvbox
 highlight Comment cterm=italic
 
 "airline show buffers
