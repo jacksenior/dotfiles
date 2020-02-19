@@ -36,6 +36,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'rking/ag.vim'
 Plug 'Quramy/tsuquyomi'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+Plug 'takac/vim-hardtime'
 
 " A collection of language packs for Vim.
 Plug 'sheerun/vim-polyglot',
@@ -51,10 +52,6 @@ Plug 'sheerun/vim-polyglot',
 
 call plug#end()
 
-" vim hard timke config
-let g:hardtime_maxcount = 2
-
-"
 filetype plugin indent on
 
 set autoindent
@@ -126,6 +123,36 @@ cnoremap w!! %!sudo tee > /dev/null %
 let g:ctrlp_match_window = 'order:ttb,max:20'
 let g:gitgutter_enabled = 1
 
+" Vim hard time config start 
+let g:hardtime_default_on = 1
+let g:list_of_normal_keys = ["h", "j", "k", "l", "+", "<UP>", "<DOWN>", "<LEFT>", "<RIGHT>"]
+let g:list_of_visual_keys = ["h", "j", "k", "l", "+", "<UP>", "<DOWN>", "<LEFT>", "<RIGHT>"]
+let g:list_of_insert_keys = ["<UP>", "<DOWN>", "<LEFT>", "<RIGHT>"]
+let g:list_of_disabled_keys = []
+" Vim hard time config end
+
+
+" Vim easy motion config start
+let g:EasyMotion_do_mapping = 0 " Disable default mappings
+"JK motions: Line motions
+map <Leader>l <Plug>(easymotion-lineforward)
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
+map <Leader>h <Plug>(easymotion-linebackward)
+" Gif config
+map  / <Plug>(easymotion-sn)
+omap / <Plug>(easymotion-tn)
+
+" These `n` & `N` mappings are options. You do not have to map `n` & `N` to EasyMotion.
+" Without these mappings, `n` & `N` works fine. (These mappings just provide
+" different highlight method and have some other features )
+map  n <Plug>(easymotion-next)
+map  N <Plug>(easymotion-prev)
+" find word
+map <Leader>w <Plug>(easymotion-w)
+" find letter
+map <Leader>f <Plug>(easymotion-f)
+" Vim easy motion config end
 
 " fdoc is yaml
 autocmd BufRead,BufNewFile *.fdoc set filetype=yaml
